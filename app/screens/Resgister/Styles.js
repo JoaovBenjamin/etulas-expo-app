@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container:{
+    container: {
         display: "flex",
         flexDirection: "column",
         backgroundColor: 'white',
@@ -25,63 +25,64 @@ export const styles = StyleSheet.create({
         display: 'flex',
         gap: '12px'
     },
-    
+
     textInput: {
         borderColor: 'gray',
         borderWidth: 1,
-        height : 35,
+        height: 35,
         width: 225,
-        borderRadius:20,
+        borderRadius: 20,
         padding: 8,
     },
 
-    containerCheckbox:{
-        display:'flex',
-        alignItems: 'center',
-        textAlign: 'center',
-        gap: 4
-    },
+    //TODO -- Fazer o Checkbox e ajeitar o layout
 
-    textUseTerms:{
-        color: 'green'
-    },
+    // containerCheckbox: {
+    //     display: "flex",
+    //     flexDirection: 'row'
+
+    // },
+
+    // textUseTerms: {
+    //     color: 'green'
+    // },
 
     buttonRegister: {
-        display:'flex',
+        display: 'flex',
         backgroundColor: 'green',
         color: 'white',
         justifyContent: 'center',
         textAlign: 'center',
-        height : 35,
+        height: 35,
         width: 225,
-        borderRadius:20,
+        borderRadius: 20,
     },
 
     textH3: {
-      fontWeight: 'regular',
-      textAlign: 'center',
+        fontWeight: 'regular',
+        textAlign: 'center',
     },
 
-    containerSocialMedia:{
-        display:"flex",
+    containerSocialMedia: {
+        display: "flex",
         flexDirection: 'row',
-        justifyContent:'space-around',
-        marginTop:15,
+        justifyContent: 'space-around',
+        marginTop: 15,
         alignItems: 'center'
     },
 
     buttonSocialMedia: {
         backgroundColor: '#F4F4F4',
         width: 42,
-        height:42,
+        height: 42,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 15
     },
 
-    textLink:{
+    textLink: {
         color: 'green',
         textTransform: 'uppercase',
-        
+
     }
 })
