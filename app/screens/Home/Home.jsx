@@ -11,4 +11,3 @@ const Home = () => {
 
 export default Home
 
-const styles = StyleSheet.create({})
