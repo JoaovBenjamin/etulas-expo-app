@@ -1,18 +1,14 @@
+import CryptoJS from "crypto-js";
 
-import NodeRSA from 'node-rsa';
+const secretKey = "04c5ddca952fc03ea2720f5efb23bc243b6109952f89acda7b8e986d00cd8635";
 
-const key = new NodeRSA({ b: 512 });
-const publicKey = key.exportKey('public');
-const privateKey = key.exportKey('private');
-
+// Função para criptografar dados
 export const encryptData = (data) => {
-    return key.encrypt(data, 'hex'); 
+    return CryptoJS.AES.encrypt(data, secretKey).toString();
 };
 
+// Função para descriptografar dados
 export const decryptData = (cipherText) => {
-    return key.decrypt(cipherText, 'utf8'); 
+    const bytes = CryptoJS.AES.decrypt(cipherText, secretKey);
+    return bytes.toString(CryptoJS.enc.Utf8);
 };
-
-export const getPublicKey = () => publicKey;
-export const getPrivateKey = () => privateKey;
- 

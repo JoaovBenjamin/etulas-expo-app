@@ -12,37 +12,29 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
-    let hasError = false;
-
-    if (email.trim() === '') {
-      Alert.alert('Erro', 'O email não pode estar vazio');
-      hasError = true;
-    }
-
-    if (password.trim() === '') {
-      Alert.alert('Erro', 'A senha não pode estar vazia');
-      hasError = true;
-    }
-
-    if (!hasError) {
-      const encryptedData = await AsyncStorage.getItem('user_data');
-      
-      if (encryptedData) {
-        const decryptedData = JSON.parse(decryptData(encryptedData));
-        
-        if (decryptedData.email === email && decryptedData.password === password) {
-          Alert.alert('Sucesso', 'Login realizado com sucesso!');
-          navigation.navigate('Home');
+    const handleLogin = async () => {
+      try {
+        const encryptedData = await AsyncStorage.getItem("user_data");
+        if (encryptedData) {
+          const decryptedData = JSON.parse(decryptData(encryptedData));
+          const { email: storedEmail, password: storedPassword } = decryptedData;
+  
+          if (email === storedEmail && password === storedPassword) {
+            Alert.alert("Sucesso", "Login bem-sucedido!");
+            navigation.navigate("Home"); 
+            console.log("Dados desincriptografado", decryptedData)
+          } else {
+            Alert.alert("Erro", "Nome ou senha incorretos.");
+          }
         } else {
-          Alert.alert('Erro', 'Email ou senha incorretos');
+          Alert.alert("Erro", "Nenhum usuário registrado.");
         }
-      } else {
-        Alert.alert('Erro', 'Nenhum usuário encontrado. Faça o registro primeiro.');
+      } catch (error) {
+        console.error("Erro ao fazer login:", error);
+        Alert.alert("Erro", "Ocorreu um erro ao tentar fazer login.");
       }
-    }
-  };
-
+    };
+  
   const HandleLoginMedia = () => {
     alert('Login realizado com sucesso');
     navigation.navigate('Home');

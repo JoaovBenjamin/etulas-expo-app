@@ -14,7 +14,7 @@ export default function Register({ navigation }) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = async () => {
+  const validationFields = () => {
     let hasError = false;
 
     if (name.trim() === '') {
@@ -42,15 +42,30 @@ export default function Register({ navigation }) {
       hasError = true;
     }
 
-    if (!hasError) {
-      const userData = { name, email, password };
-      
-      const encryptedData = encryptData(JSON.stringify(userData));
+    return true
 
-      await AsyncStorage.setItem('user_data', encryptedData);
-      console.log(userData)
-      Alert.alert('Sucesso', 'Registro enviado com sucesso!');
-      navigation.navigate('Login');
+  };
+
+  const saveUser = async (userData) => {
+    try {
+      const encryptedData = encryptData(JSON.stringify(userData));
+      if (encryptedData) {
+        await AsyncStorage.setItem("user_data", encryptedData);
+        console.log("Dados criptografados salvos:", encryptedData);
+        Alert.alert("Sucesso", "Registro enviado com sucesso!");
+        navigation.navigate("Login");
+      } else {
+        console.error("Falha na criptografia dos dados");
+      }
+    } catch (error) {
+      console.error("Erro ao salvar dados:", error);
+    }
+  };
+
+  const handleRegister = async () => {
+    if (validationFields()) {
+      const userData = { email, password };
+      await saveUser(userData);
     }
   };
 
