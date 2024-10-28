@@ -1,11 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container:{
+    container: {
         display: "flex",
         flexDirection: "column",
         backgroundColor: 'white',
         alignItems: 'center',
+        gap: 10,
+        textAlign: 'center',
         height: '100vh',
     },
 
@@ -23,54 +25,28 @@ export const styles = StyleSheet.create({
     containerInput: {
         marginTop: '36px',
         display: 'flex',
-        gap: '12px'
+        alignItems: "center",
+        gap: 16
     },
-    
+
     textInput: {
         borderColor: 'gray',
         borderWidth: 1,
-        height : 35,
+        height: 35,
         width: 225,
-        borderRadius:20,
+        borderRadius: 20,
         padding: 8,
     },
 
-    buttonLogin: {
-        display:'flex',
+    buttonRegister: {
+        display: 'flex',
         backgroundColor: 'green',
         color: 'white',
         justifyContent: 'center',
         textAlign: 'center',
-        height : 35,
+        height: 35,
         width: 225,
-        borderRadius:20,
+        borderRadius: 20,
     },
 
-    textH3: {
-      fontWeight: 'regular',
-      textAlign: 'center',
-    },
-
-    containerSocialMedia:{
-        display:"flex",
-        flexDirection: 'row',
-        justifyContent:'space-around',
-        marginTop:15,
-        alignItems: 'center'
-    },
-
-    buttonSocialMedia: {
-        backgroundColor: '#F4F4F4',
-        width: 42,
-        height:42,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 15
-    },
-
-    textLink:{
-        color: 'green',
-        textTransform: 'uppercase',
-        
-    }
 })
