@@ -11,7 +11,7 @@ export default function StackRoute() {
             <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
                 <Stack.Screen name='Login' component={Login} />
                 <Stack.Screen name='Home' component={Home} />
-                <Stack.Screen name='Registro' component={Register} />
+                <Stack.Screen name='Registro' component={Register}/>
             </Stack.Navigator>
         </>
     );

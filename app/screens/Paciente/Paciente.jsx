@@ -1,14 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const Feed = () => {
+const Paciente = () => {
     return (
         <View>
-            <Text>Feed</Text>
+            <Text>Paciente</Text>
         </View>
     )
 }
 
-export default Feed
+export default Paciente
 
-const styles = StyleSheet.create({})

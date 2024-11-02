@@ -1,6 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Feed from '../screens/Feed/Feed';
+import Paciente from '../screens/Paciente/Paciente';
 import StackRoute from './stack.routes';
 
 const Drawer = createDrawerNavigator();
@@ -15,10 +15,10 @@ const DrawerRoutes = () => {
                         component={StackRoute}
                         options={
                             {
-                                drawerIcon: ({ color, size }) =>
+                                drawerIcon: ({ size }) =>
                                     <Feather
                                         name='home'
-                                        color={color}
+                                        color= 'green'
                                         size={size}
                                     />,
                                 drawerLabel: 'Home'
@@ -26,17 +26,17 @@ const DrawerRoutes = () => {
                         }
                     />
                     <Drawer.Screen
-                        name='Feed'
-                        component={Feed}
+                        name='Paciente'
+                        component={Paciente}
                         options={
                             {
-                                drawerIcon: ({ color, size }) =>
+                                drawerIcon: ({ size }) =>
                                     <Feather
-                                        name='list'
-                                        color={color}
+                                        name='user'
+                                        color='green'
                                         size={size}
                                     />,
-                                drawerLabel: 'Feed'
+                                drawerLabel: 'Paciente'
                             }
                         }
                     />
