@@ -1,11 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import ContainerHome from '../../components/ContainerHome/ContainerHome'
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <ContainerHome />
   )
 }
 

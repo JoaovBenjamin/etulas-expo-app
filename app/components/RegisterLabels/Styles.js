@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 10,
         textAlign: 'center',
-        height: '100vh',
+        height: '100%',
     },
 
     containerImage: {

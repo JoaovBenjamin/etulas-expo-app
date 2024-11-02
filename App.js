@@ -1,21 +1,10 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from './app/screens/Login/Login';
-import Home from './app/screens/Home/Home';
-import Register from './app/screens/Resgister/Register';
+import Routes from './app/routes';
 
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='Login' screenOptions={{headerShown: false}}>
-          <Stack.Screen name='Login' component={Login}/>
-          <Stack.Screen name='Home' component={Home}/>
-          <Stack.Screen name='Registro' component={Register}/>
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Routes />
     </>
   );
 }
