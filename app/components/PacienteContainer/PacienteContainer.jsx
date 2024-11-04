@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { getPaciente } from '../../actions/paciente/get';
 import PacienteCard from '../PacienteCard/PacienteCard';
 import { styles } from './Styles';
 import { Feather } from '@expo/vector-icons';
-import FormCreate from '../FormCreate/FormCreate'; // Importe seu formulário
 
 const PacienteContainer = () => {
     const navigation = useNavigation();
@@ -21,16 +20,18 @@ const PacienteContainer = () => {
         }
     };
 
-    useEffect(() => {
-        fetchPacientes();
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            fetchPacientes();
+        }, [])
+    );
 
     const handleRefresh = () => {
         fetchPacientes();
     };
 
     const handleNew = () => {
-        navigation.navigate('NewPaciente', { onPacienteCreated: handleRefresh }); // Passa a função de refresh para a nova tela
+        navigation.navigate('NewPaciente'); 
     };
 
     if (pacientes.length === 0) return <Text>Carregando...</Text>;

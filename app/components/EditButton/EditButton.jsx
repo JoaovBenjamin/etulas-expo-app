@@ -4,10 +4,10 @@ import { styles } from './Styles';
 import {Feather} from "@expo/vector-icons"
 import {useNavigation} from '@react-navigation/native'
 
-const EditButton = () => {
+const EditButton = ({pacienteId}) => {
     const navigation = useNavigation()
   return (
-    <Pressable style={styles.button} onPress={() => navigation.navigate('PutPaciente')}> 
+    <Pressable style={styles.button} onPress={() => navigation.navigate('PutPaciente', {id: pacienteId})}> 
       <Text style={styles.texto}>editar 
           <Feather
             name='edit'

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { createPaciente } from '../../actions/paciente/create';
 import { styles } from './Styles';
-const FormCreate = ({ onPacienteCreated }) => {
+const FormCreate = () => {
     const navigation = useNavigation();
  
     const [paciente, setPaciente] = useState({
@@ -41,7 +41,6 @@ const FormCreate = ({ onPacienteCreated }) => {
             if (response) {
                 Alert.alert('Paciente cadastrado com sucesso!');
                 navigation.navigate('Paciente');
-                onPacienteCreated(); 
                 setPaciente({
                     nome: '',
                     idade: '',

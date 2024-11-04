@@ -35,7 +35,7 @@ const PacienteCard = ({ paciente, onPacienteDeleted }) => {
           onDelete={handleDelete}
           isDeleting={isDeleting}
         />
-        <EditButton/>
+        <EditButton pacienteId={paciente.id}/>
       </View>
     </View>
   );

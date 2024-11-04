@@ -7,3 +7,7 @@ Membros
 98938 - João Vitor Vicente Benjamin
 
 98890 - Eduardo Bezerra de Oliveira
+
+Video da API:
+
+https://youtu.be/yu8XaJppv0Y
