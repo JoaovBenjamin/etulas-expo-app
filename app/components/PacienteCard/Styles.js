@@ -19,10 +19,13 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 5,
     },
-    buttonContainer: {
-        display:'flex',
+
+    buttonContainer:{
+        display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 10,
-    },
+        alignItems: 'center',
+        gap: 5,
+        justifyContent: 'space-around',
+        marginTop: 18
+    }
 });
